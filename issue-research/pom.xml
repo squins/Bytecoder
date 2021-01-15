@@ -50,7 +50,7 @@
                 <configuration>
                     <minifyCompileResult>true</minifyCompileResult>
                     <filenamePrefix>main</filenamePrefix>
-                    <buildDirectory>target/${project.build.finalName}</buildDirectory>
+                    <buildDirectory>${project.basedir}/target/${project.build.finalName}</buildDirectory>
                     <mainClass>com.example.Main</mainClass>
                     <backend>js</backend>
                     <enableExceptionHandling>true</enableExceptionHandling>
