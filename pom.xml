@@ -45,6 +45,7 @@
         <module>maven</module>
         <module>integrationtest</module>
         <module>cli</module>
+        <module>issue-research</module>
     </modules>
 
     <properties>
