@@ -1,5 +1,6 @@
 package com.example;
 
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.badlogic.gdx.utils.reflect.Field;
 import com.badlogic.gdx.utils.reflect.ReflectionException;
@@ -27,11 +28,17 @@ public class Main {
     }
 
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, ReflectionException {
+        MyClassWithField myClassWithField = new MyClassWithField();
+        BaseClass baseClass = new BaseClass();
+        BaseClass.staticField = "staticFieldValue";
+
         System.out.println("Calling BaseClass.class.getField()");
 
         final java.lang.reflect.Field f = BaseClass.class.getField("staticField");
 
         System.out.println(f.getName());
+
+        System.out.println(f.getType() != null);
 
         System.out.println("Calling MyClassWithField.class.getField");
 
@@ -47,15 +54,15 @@ public class Main {
         System.out.println("Calling libgdx getField");
 
         Field gdxStringListField = ClassReflection.getField(MyClassWithField.class, "myStringList");
-        System.out.println("Got gdx field");
-        System.out.println("Type:  "  + gdxStringListField.getType());
+        System.out.println("Got gdx field, name: " + gdxStringListField.getName() + "type: " + gdxStringListField.getType().getName());
+        System.out.println("Type: "  + gdxStringListField.getType());
 //        System.out.println("ElementType: " + gdxStringListField.getElementType(0));
 
         System.out.println("Getting declared fields");
         Field[] declaredFields = ClassReflection.getDeclaredFields(ArrayList.class);
         System.out.println(Arrays.toString(declaredFields));
 
-        MyClassWithField myObject = new MyClassWithField();
+        MyClassWithField myObject = myClassWithField;
 
         java.lang.reflect.Field myField = MyClassWithField.class.getField("myField");
         myField.set(myObject, "myValue");

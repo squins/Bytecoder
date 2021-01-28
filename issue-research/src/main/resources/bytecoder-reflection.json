@@ -1,0 +1,11 @@
+{
+  "com.example.Main$BaseClass": {
+    "enableClassForName": true
+  },
+  "com.example.Main$ReflectionTarget": {
+    "enableClassForName": true
+  },
+  "com.example.MyClassWithField": {
+    "enableClassForName": true
+  }
+}

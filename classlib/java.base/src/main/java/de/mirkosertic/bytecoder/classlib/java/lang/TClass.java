@@ -73,6 +73,10 @@ public class TClass {
         return getName();
     }
 
+    public boolean isMemberClass() {
+        return false;
+    }
+
     public boolean isEnum() {
         return false;
     }
@@ -272,4 +276,6 @@ public class TClass {
         //noinspection unchecked
         return (T) obj;
     }
+
+
 }
