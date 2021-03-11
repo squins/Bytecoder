@@ -35,4 +35,8 @@ public class TConstructor {
 
     public void setAccessible(final boolean a){
     }
+
+    public boolean isAccessible() {
+        return true;
+    }
 }

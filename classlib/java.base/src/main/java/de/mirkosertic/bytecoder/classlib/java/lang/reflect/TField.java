@@ -77,7 +77,7 @@ public class TField {
     }
 
     public boolean isAccessible() {
-        return false;
+        return true;
     }
 
     public void setAccessible(final boolean a){
