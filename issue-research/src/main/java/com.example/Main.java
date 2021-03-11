@@ -32,6 +32,14 @@ public class Main {
         BaseClass baseClass = new BaseClass();
         BaseClass.staticField = "staticFieldValue";
 
+        Object clazz = Integer.class;
+
+        System.out.println("This line will crash:");
+        System.out.println("Clazz instanceof: " + (clazz instanceof String));
+
+        System.out.println("This line will crash too");
+        System.out.println("Clazz hashcode " + clazz.hashCode());
+
         System.out.println("Calling BaseClass.class.getField()");
 
         final java.lang.reflect.Field f = BaseClass.class.getField("staticField");
